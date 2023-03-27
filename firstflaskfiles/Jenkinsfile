@@ -1,0 +1,14 @@
+pipeline {
+    
+    agent any
+    
+    stages {
+
+       stage('Do the deployment') {
+            
+            steps {
+                echo ">> Run deploy applications "
+            }
+        }
+    }
+}
