@@ -1,27 +1,37 @@
 pipeline {
-    
-    agent any
-    
-    stages {
-   
-	stage('Checkout SCM') {
- 	    steps {
-    		checkout([
-      			$class: 'GitSCM',
-      			branches: [[name: 'master']],
-      			userRemoteConfigs: [[
-        		url: 'https://github.com/vahric/pythoncicdtest.git',
-        		credentialsId: '',
-      			]]
-     			])
-   }
-}
+  
+  agent any
 
-       stage('Do the deployment') {
-            
-            steps {
-                echo ">> Run deploy applications "
+  stages {
+	
+    stage("build"){
+      
+      steps {
+
+         echo 'build the app'
+
+            }		
+		  }
+
+    stage("test"){
+      
+      steps {
+
+         echo 'test the app'
+
             }
-        }
-    }
+                  }  
+
+    stage("deploy"){
+      
+      steps {
+
+         echo 'deploy the app'
+
+            }
+                  }
+
+
+	}
+
 }
